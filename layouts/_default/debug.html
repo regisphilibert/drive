@@ -1,0 +1,54 @@
+{{ define "main" }}
+
+		<h3>{{ .Title }}</h3>
+		<span class="badge badge-danger">debug</span> <span class="badge badge-info">{{ .Type }}</span>
+		<hr>
+		<div>
+			{{ .Content }}
+		</div>
+{{ .Type }}
+<hr>
+{{ $fields := (dict "Title" "p_title" "Type" "p_type" "Status" "p_status") }}
+{{ range $index, $value := $fields}}
+    {{ $index}}:{{$value}}
+{{ end }}
+		<ul>
+			{{ range .Resources }}
+				<li>
+					{{ .Name }} 
+					<br>Title: {{ .Title }}
+					<br> Type: {{ .ResourceType }}
+			{{ end}}
+		</ul>
+
+		<h3>Image Processing</h3>
+		<p>Working with tokyo</p>
+		{{ $image := .Resources.GetMatch "*/tokyo.jpg" }}
+		{{ $img := $image.Resize "x600" }}
+		{{ $imgFit := $image.Resize "x600 Gaussian" }}
+		{{ printf "%#v" $img}}
+		<figure>
+			<p>tokyo</p>
+			<img src="{{ $img.Permalink }}" alt="">
+			<hr>
+			<img src="{{ $imgFit.Permalink }}" alt="">
+		</figure>
+
+		{{ $var := false}}
+		{{ if $var }}
+		<ul>
+			{{ range .Resources }}
+				<li>
+					{{ .Name }} 
+					<br>Title: {{ .Title }}
+					<br> Type: {{ .ResourceType }}
+					{{ if ne .ResourceType "page" }}
+					<br>{{ .AbsSourceFilename }}
+					<br>{{ .RelPermalink }}
+					{{ end }}
+					
+					<br> {{/* printf "%#v" . */}}</li>
+			{{ end}}
+		</ul>
+		{{ end }}
+{{ end }}
