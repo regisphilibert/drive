@@ -1,6 +1,0 @@
-baseURL = "http://example.com"
-languageCode = "en-us"
-enableRobotsTXT = true
-title = "Drive Test A"
-[params]
-	baseline = "Hello A"

@@ -1,11 +1,9 @@
 {{ define "main" }}
-
+{{ if eq "bonjour" "bonjour" }}
+	{{ $greeting := "astaluego" }}
+{{ end }}
 	{{ range .Data.Pages.ByDate.Reverse }}
-		<h3><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-		<span class="badge badge-info">{{ .Type }}</span>
-		<div>
-			{{ .Summary }}
-		</div>
+		{{ .Render "li" }}
 	{{ end }}
 
 {{ end }}

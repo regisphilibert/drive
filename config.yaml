@@ -1,0 +1,17 @@
+baseURL: http://example.com
+languageCode: en-us
+enableRobotsTXT: true
+title: Drive Test A
+params:
+  baseline: "Hello A"
+theme: hugo-debugprint
+languages:
+  fr:
+    languageName: Français
+    weight: 10
+  kl:
+    languageName: Klingon
+    weight: 30
+  en:
+    languageName: English
+    weight: 1

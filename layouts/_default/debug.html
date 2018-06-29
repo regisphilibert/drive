@@ -7,6 +7,27 @@
 			{{ .Content }}
 		</div>
 {{ .Type }}
+
+<hr>
+
+{{ range .Params.Contacts.Phones }}
+    <p class="text-white">{{ .country }}</p>
+{{ end }}
+
+<hr>
+{{ $test := "gg" }}
+{{ if eq $test "fr" }}
+	Francais
+{{ else if eq $test "en" }}
+	Hello
+{{ else }}
+	Gutten Tag
+{{ end }}
+<hr>
+{{ range .Site.Pages }}
+	<h4>{{ .Title }}</h4>
+	<h4>{{ $.Title }}</h4>
+{{ end }}
 <hr>
 {{ $fields := (dict "Title" "p_title" "Type" "p_type" "Status" "p_status") }}
 {{ range $index, $value := $fields}}

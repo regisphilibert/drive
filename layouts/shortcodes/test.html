@@ -1,5 +1,11 @@
-<ul class="list-group">
-	<li class="list-group-item">{{ $.Site.Title }}</li>
-	<li class="list-group-item">{{ $.Page.Title }}</li>
-	<li class="list-group-item">{{ $.Page.Permalink }}</li>
-</ul>
+{{ if .Get "name" }}
+	We have Arg
+	<p>
+		{{ .Inner }}
+	</p>
+{{ else }}
+	We don't have arg
+	<p>
+		{{ .Inner }}
+	</p>
+{{ end }}

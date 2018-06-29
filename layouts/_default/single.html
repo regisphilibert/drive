@@ -1,4 +1,13 @@
+
 {{ define "main" }}
+	{{ partial "debugprint" .Resources }}
+	{{ if .IsTranslated }}
+	<ul>
+		{{ range .AllTranslations }}
+			<li>{{ partial "debugprint" .Language }}</li>
+		{{ end }}
+	</ul>
+	{{ end }}
 
 		<h3>{{ .Title }}</h3>
 		<span class="badge badge-info">{{ .Type }}</span>

@@ -2,3 +2,6 @@ baseURL = "http://example.org/"
 title = "Drive Test B"
 [params]
 	baseline = "Hello B"
+
+[taxonomies]
+  tag = "tags"

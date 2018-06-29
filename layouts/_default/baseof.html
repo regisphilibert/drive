@@ -15,10 +15,6 @@
 		<div class="container">
         <h1>{{ .Site.Title }}</h1>
         <h3>{{ .Site.Params.baseline }}</h3>
-
-        <h3>Home Bundle</h3>
-        {{ $homeResources := .Site.GetPage "blog" "tryout" "index.md" }}
-        {{ printf "%#v" $homeResources}}
         
         <hr>
 			{{ block "main" .}}

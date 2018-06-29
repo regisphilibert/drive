@@ -1,10 +1,11 @@
 {{ define "main" }}
-	{{ range .Data.Pages.ByDate.Reverse }}
-		<h3><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-		<span class="badge badge-info">{{ .Type }}</span>
-		<div>
-			{{ .Summary }}
-		</div>
-	{{ end }}
+
+{{ range .Site.Languages }}
+	{{ partial "debugprint.html" . }}
+{{ end }}
+
+{{ range .Data.Pages }}
+	{{ .Render "li" }}
+{{ end }}
 
 {{ end }}
