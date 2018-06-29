@@ -8,10 +8,10 @@ theme: hugo-debugprint
 languages:
   fr:
     languageName: Français
-    weight: 10
+    weight: 20
   kl:
     languageName: Klingon
     weight: 30
   en:
     languageName: English
-    weight: 1
+    weight: 10
