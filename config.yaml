@@ -8,10 +8,13 @@ theme: hugo-debugprint
 languages:
   fr:
     languageName: Français
+    contentDir: contentFrench
     weight: 20
   kl:
     languageName: Klingon
+    contentDir: contentKlingon
     weight: 30
   en:
     languageName: English
+    contentDir: contentEnglish
     weight: 10
